@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --black: #000;
+  --grey: #dfdfdf;
+  --white: #fff;
+  --accent: linear-gradient(45deg, #ffc593, #bc7198, #5a77ff);
+  --font: 'DM Sans', sans-serif;
+  --regular: 400;
+  --bold: 700;
+}
