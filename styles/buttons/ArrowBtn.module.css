@@ -1,0 +1,20 @@
+.container-white,
+.container-black {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  font-weight: var(--bold);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.container-white {
+  color: var(--white);
+}
+.container-black {
+  color: var(--black);
+}

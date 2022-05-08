@@ -4,7 +4,12 @@
   --black: #000;
   --grey: #dfdfdf;
   --white: #fff;
-  --accent: linear-gradient(45deg, #ffc593, #bc7198, #5a77ff);
+  --accent: linear-gradient(
+    45deg,
+    rgba(255, 197, 147, 1) 0%,
+    rgba(188, 113, 152, 1) 50%,
+    rgba(90, 119, 255, 1) 100%
+  );
   --font: 'DM Sans', sans-serif;
   --regular: 400;
   --bold: 700;
