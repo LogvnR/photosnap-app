@@ -3,8 +3,13 @@ import Head from 'next/head';
 
 import HomeCard from '../components/cards/HomeCard';
 import PhotoCard from '../components/cards/PhotoCard';
+import Features from '../components/ui/Features';
 
-import { HomeCardContent, HomePhotoCardContent } from '../helpers/content';
+import {
+  HomeCardContent,
+  HomePhotoCardContent,
+  HomeFeatureContent,
+} from '../helpers/content';
 
 import classes from '../styles/Home.module.css';
 
@@ -33,6 +38,7 @@ const Home: NextPage = () => {
       {HomePhotoCardContent.map(({ title, author, photoS }) => (
         <PhotoCard title={title} author={author} photo={photoS} key={title} />
       ))}
+      <Features content={HomeFeatureContent} />
     </section>
   );
 };
