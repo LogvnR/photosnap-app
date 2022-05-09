@@ -10,18 +10,15 @@ interface Props {
   color: string;
   title: string;
   info: string;
+  photoPosition: string;
+  name: string;
 }
 
-const HomeCard: FC<Props> = ({ photo, accent, color, title, info }) => {
+const HomeCard: FC<Props> = ({ photo, accent, color, title, info, name }) => {
   return (
     <section className={classes.container}>
       <div className={classes['image-container']}>
-        <Image
-          layout="responsive"
-          objectFit="contain"
-          src={photo}
-          alt="Create and Share"
-        />
+        <Image layout="responsive" objectFit="contain" src={photo} alt={name} />
       </div>
       <div className={classes[`content-container-${color}`]}>
         {accent && <div className={classes.accent}></div>}
