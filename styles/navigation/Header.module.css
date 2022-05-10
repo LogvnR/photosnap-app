@@ -10,3 +10,43 @@
 .title {
   margin: 1.6rem 0;
 }
+
+.menu-container {
+  width: 100%;
+  padding: 0 2.1rem 1.6rem;
+  background-color: var(--white);
+  transition: height 0.25s ease-in-out;
+}
+
+.navigation {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.navigation h4 {
+  margin: 0 0 1.8rem;
+  font-size: 15px;
+  font-weight: var(--bold);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: var(--bold);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 0.9rem 0;
+}

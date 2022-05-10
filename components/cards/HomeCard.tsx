@@ -24,7 +24,7 @@ const HomeCard: FC<Props> = ({ photo, accent, color, title, info, name }) => {
         {accent && <div className={classes.accent}></div>}
         <h2 className={classes.title}>{title}</h2>
         <p className={classes.info}>{info}</p>
-        <ArrowBtn color={color} />
+        <ArrowBtn title="get an invite" color={color} />
       </div>
     </section>
   );

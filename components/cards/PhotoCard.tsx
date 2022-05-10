@@ -8,13 +8,15 @@ interface Props {
   photo: StaticImageData;
   title: string;
   author: string;
+  date?: string;
 }
 
-const PhotoCard: FC<Props> = ({ photo, title, author }) => {
+const PhotoCard: FC<Props> = ({ photo, title, author, date }) => {
   return (
     <div className={classes.container}>
       <div className={classes['content-container']}>
         <div className={classes['title-container']}>
+          {date && <p className={classes.date}>{date}</p>}
           <h3 className={classes.title}>{title}</h3>
           <p className={classes.author}>by {author}</p>
         </div>

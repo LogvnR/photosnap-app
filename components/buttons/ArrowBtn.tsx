@@ -4,12 +4,13 @@ import classes from '../../styles/buttons/ArrowBtn.module.css';
 
 interface Props {
   color: string;
+  title: string;
 }
 
-const ArrowBtn: FC<Props> = ({ color }) => {
+const ArrowBtn: FC<Props> = ({ color, title }) => {
   return (
     <div className={classes[`container-${color}`]}>
-      get an invite
+      {title}
       <img src={`/assets/shared/desktop/arrow-${color}.svg`} />
     </div>
   );

@@ -1,0 +1,65 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  padding: 2.5rem 2.1rem;
+  color: var(--white);
+}
+
+.headline {
+  font-size: 12px;
+  font-weight: var(--bold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 1.3rem;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 3.33px;
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.sub-info-container {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  font-size: 13px;
+  font-weight: var(--regular);
+  color: var(--white);
+  margin: 0 0 1.5rem;
+}
+
+.date,
+.author {
+  margin: 0;
+}
+
+.date {
+  text-transform: capitalize;
+  opacity: 0.75;
+}
+
+.info {
+  margin: 0 0 1.8rem;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: var(--regular);
+  opacity: 0.6;
+}

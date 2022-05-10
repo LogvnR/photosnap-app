@@ -32,6 +32,12 @@
   text-transform: capitalize;
 }
 
+.date {
+  margin: 0 0 0.5rem;
+  font-size: 13px;
+  font-weight: var(--regular);
+}
+
 .title {
   margin: 0 0 0.4rem;
   font-size: 18px;
