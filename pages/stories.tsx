@@ -3,11 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import classes from '../styles/pages/stories.module.css';
-import photo from '../public/assets/stories/mobile/moon-of-appalacia.jpg';
+
+import PhotoCard from '../components/cards/PhotoCard';
 import ArrowBtn from '../components/buttons/ArrowBtn';
 
-import { StoriesPhotoCardContent } from '../helpers/cards/PhotoCardContent';
-import PhotoCard from '../components/cards/PhotoCard';
+import {
+  StoriesPhotoCardContent,
+  StoriesHeroCardContent,
+} from '../helpers/content';
 
 const stories = () => {
   return (
@@ -25,28 +28,21 @@ const stories = () => {
   );
 };
 
+// Main Hero Section on "Stories" page
 const FeaturedStory: FC = () => {
+  const { headline, title, date, author, info, photoS } =
+    StoriesHeroCardContent;
   return (
     <div className={classes['hero-container']}>
-      <Image
-        layout="responsive"
-        objectFit="contain"
-        src={photo}
-        alt="Moon of Appalacia"
-      />
+      <Image layout="responsive" objectFit="contain" src={photoS} alt={title} />
       <div className={classes['content-container']}>
-        <p className={classes.headline}>last month's featured story</p>
-        <h2 className={classes.title}>hazy full moon of appalachia</h2>
+        <p className={classes.headline}>{headline}</p>
+        <h2 className={classes.title}>{title}</h2>
         <div className={classes['sub-info-container']}>
-          <p className={classes.date}>March 2nd 2020</p>
-          <p className={classes.author}>by John Appleseed</p>
+          <p className={classes.date}>{date}</p>
+          <p className={classes.author}>{author}</p>
         </div>
-        <p className={classes.info}>
-          The dissected plateau area, while not actually made up of geological
-          mountains, is popularly called "mountains," especially in eastern
-          Kentucky and West Virginia, and while the ridges are not high, the
-          terrain is extremely rugged.
-        </p>
+        <p className={classes.info}>{info}</p>
         <ArrowBtn title="read the story" color="white" />
       </div>
     </div>
