@@ -22,7 +22,7 @@ const Footer = () => {
         <h4>features</h4>
         <h4>pricing</h4>
       </div>
-      <ArrowBtn color="white" />
+      <ArrowBtn title="get an invite" color="white" />
       <p className={classes.copyright}>copyright 2019. all right reserved</p>
     </footer>
   );
