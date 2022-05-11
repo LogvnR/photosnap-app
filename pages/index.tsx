@@ -31,6 +31,7 @@ const Home: NextPage = () => {
             color={color}
             info={info}
             photoPosition={photoPosition}
+            button={true}
             key={title}
           />
         )

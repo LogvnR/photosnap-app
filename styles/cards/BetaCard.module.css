@@ -8,35 +8,21 @@
 .image-container {
   width: 100%;
   position: relative;
+  filter: brightness(50%);
 }
 
-.content-container-white,
-.content-container-black {
-  position: relative;
+.content-container {
+  position: absolute;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 1.7rem;
-  padding: 0 1.7rem 4rem;
-}
-
-.content-container-white {
-  background-color: var(--black);
+  padding: 0 1.7rem;
   color: var(--white);
 }
 
-.content-container-black {
-  background-color: var(--white);
-  color: var(--black);
-}
-
 .accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1.7rem;
   width: 128px;
   height: 6px;
   background: var(--accent);
@@ -48,13 +34,5 @@
   letter-spacing: 3.3px;
   line-height: 40px;
   font-weight: var(--bold);
-  margin: 4.2rem 0 0;
-}
-
-.info {
-  font-size: 15px;
-  line-height: 25px;
-  font-weight: var(--regular);
-  opacity: 0.6;
-  margin: 0;
+  margin: 3rem 0 2rem;
 }

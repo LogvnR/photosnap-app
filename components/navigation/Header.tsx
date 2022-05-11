@@ -29,7 +29,9 @@ const Header: FC = () => {
             <Link href="/stories">
               <h4 onClick={close}>stories</h4>
             </Link>
-            <h4>features</h4>
+            <Link href="/features">
+              <h4 onClick={close}>features</h4>
+            </Link>
             <h4>pricing</h4>
           </div>
           <div className={classes.btn}>get an invite</div>

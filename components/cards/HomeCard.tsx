@@ -9,12 +9,21 @@ interface Props {
   accent: boolean;
   color: string;
   title: string;
-  info: string;
+  info?: string;
   photoPosition: string;
   name: string;
+  button: boolean;
 }
 
-const HomeCard: FC<Props> = ({ photo, accent, color, title, info, name }) => {
+const HomeCard: FC<Props> = ({
+  photo,
+  accent,
+  color,
+  title,
+  info,
+  name,
+  button,
+}) => {
   return (
     <section className={classes.container}>
       <div className={classes['image-container']}>
@@ -23,8 +32,8 @@ const HomeCard: FC<Props> = ({ photo, accent, color, title, info, name }) => {
       <div className={classes[`content-container-${color}`]}>
         {accent && <div className={classes.accent}></div>}
         <h2 className={classes.title}>{title}</h2>
-        <p className={classes.info}>{info}</p>
-        <ArrowBtn title="get an invite" color={color} />
+        {info && <p className={classes.info}>{info}</p>}
+        {button && <ArrowBtn title="get an invite" color={color} />}
       </div>
     </section>
   );
