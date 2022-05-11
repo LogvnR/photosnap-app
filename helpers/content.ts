@@ -11,6 +11,9 @@ import { StoriesHeroCardContent } from './pages/stories';
 import { FeaturesHeroCardContent } from './pages/features';
 import { AdditionalFeatureContent } from './cards/FeatureCardContent';
 
+// Pricing Page Content
+import { PricingHeroCardContent } from './pages/pricing';
+
 // Shared Content
 import { BetaCardContent } from './cards/BetaContent';
 
@@ -23,5 +26,6 @@ export {
   StoriesHeroCardContent,
   FeaturesHeroCardContent,
   AdditionalFeatureContent,
+  PricingHeroCardContent,
   BetaCardContent,
 };

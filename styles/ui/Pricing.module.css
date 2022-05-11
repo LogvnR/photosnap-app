@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  background-color: white;
+}
+
+.toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1.8rem;
+}
+
+.option {
+  font-size: 18px;
+  font-weight: var(--bold);
+  line-height: 25px;
+  color: var(--black);
+  transition: color 0.25s ease-in-out;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.25s ease-in-out;
+}

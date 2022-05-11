@@ -32,7 +32,9 @@ const Header: FC = () => {
             <Link href="/features">
               <h4 onClick={close}>features</h4>
             </Link>
-            <h4>pricing</h4>
+            <Link href="/pricing">
+              <h4 onClick={close}>pricing</h4>
+            </Link>
           </div>
           <div className={classes.btn}>get an invite</div>
         </section>
