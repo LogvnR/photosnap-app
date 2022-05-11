@@ -12,7 +12,7 @@ import { FeaturesHeroCardContent } from './pages/features';
 import { AdditionalFeatureContent } from './cards/FeatureCardContent';
 
 // Pricing Page Content
-import { PricingHeroCardContent } from './pages/pricing';
+import { PricingHeroCardContent, PricingCardContent } from './pages/pricing';
 
 // Shared Content
 import { BetaCardContent } from './cards/BetaContent';
@@ -27,5 +27,6 @@ export {
   FeaturesHeroCardContent,
   AdditionalFeatureContent,
   PricingHeroCardContent,
+  PricingCardContent,
   BetaCardContent,
 };

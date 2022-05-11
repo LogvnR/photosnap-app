@@ -5,6 +5,7 @@ import { PricingHeroCardContent } from '../helpers/content';
 
 import HomeCard from '../components/cards/HomeCard';
 import Pricing from '../components/ui/Pricing';
+import Included from '../components/ui/Included';
 
 const pricing: NextPage = () => {
   const { photo, title, info } = PricingHeroCardContent;
@@ -26,6 +27,7 @@ const pricing: NextPage = () => {
         photoPosition="right"
       />
       <Pricing />
+      <Included />
     </section>
   );
 };
