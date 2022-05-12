@@ -11,6 +11,17 @@
   margin: 1.6rem 0;
 }
 
+.nav-container__mobile {
+  display: block;
+}
+
+.nav-container {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu-container {
   width: 100%;
   padding: 0 2.1rem 1.6rem;
@@ -49,4 +60,37 @@
   letter-spacing: 2.5px;
   text-transform: uppercase;
   padding: 0.9rem 0;
+}
+
+/* Tablet Sizing */
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 1.7rem;
+  }
+  .nav-container__mobile {
+    display: none;
+  }
+
+  .nav-container {
+    display: flex;
+  }
+
+  .navigation {
+    flex-direction: row;
+    border-bottom: none;
+    margin-bottom: 0;
+    gap: 2.5rem;
+  }
+
+  .navigation h4 {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .btn {
+    max-width: 158px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 }

@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
+import useStore from '../../helpers/store';
+
 import classes from '../../styles/cards/HomeCard.module.css';
 import ArrowBtn from '../buttons/ArrowBtn';
 
@@ -24,6 +26,7 @@ const HomeCard: FC<Props> = ({
   name,
   button,
 }) => {
+  const { screenWidth } = useStore();
   return (
     <section className={classes.container}>
       <div className={classes['image-container']}>

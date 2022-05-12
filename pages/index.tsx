@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import useStore from '../helpers/store';
 
 import HomeCard from '../components/cards/HomeCard';
 import PhotoCard from '../components/cards/PhotoCard';
@@ -14,6 +17,14 @@ import {
 import classes from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const { setScreenWidth } = useStore();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      setScreenWidth(width);
+    }
+  }, []);
   return (
     <section className={classes.container}>
       <Head>

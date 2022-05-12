@@ -14,13 +14,27 @@ const Header: FC = () => {
   return (
     <>
       <nav className={classes.container}>
-        <div className={classes.title}>
+        <div onClick={close} className={classes.title}>
           <Link href="/">
             <img src="/assets/shared/desktop/logo.svg" alt="Photosnap" />
           </Link>
         </div>
-        <div className={classes['mobile-container']}>
+        <div className={classes['nav-container__mobile']}>
           <Hamburger toggled={menuToggle} toggle={setMenuToggle} />
+        </div>
+        <div className={classes['nav-container']}>
+          <div className={classes.navigation}>
+            <Link href="/stories">
+              <h4>stories</h4>
+            </Link>
+            <Link href="/features">
+              <h4>features</h4>
+            </Link>
+            <Link href="/pricing">
+              <h4>pricing</h4>
+            </Link>
+          </div>
+          <div className={classes.btn}>get an invite</div>
         </div>
       </nav>
       {menuToggle && (
