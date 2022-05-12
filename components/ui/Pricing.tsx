@@ -4,7 +4,6 @@ import { PricingCardContent } from '../../helpers/content';
 
 import classes from '../../styles/ui/Pricing.module.css';
 import ToggleCard from '../buttons/ToggleCard';
-import BetaCard from '../cards/BetaCard';
 import PricingCard from '../cards/PricingCard';
 
 const Pricing: FC = () => {
@@ -29,7 +28,6 @@ const Pricing: FC = () => {
           />
         ))}
       </section>
-      <BetaCard />
     </section>
   );
 };
