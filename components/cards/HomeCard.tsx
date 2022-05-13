@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import useStore from '../../helpers/store';
@@ -7,7 +7,9 @@ import classes from '../../styles/cards/HomeCard.module.css';
 import ArrowBtn from '../buttons/ArrowBtn';
 
 interface Props {
-  photo: StaticImageData;
+  photoS: StaticImageData;
+  photoM: StaticImageData;
+  photoL: StaticImageData;
   accent: boolean;
   color: string;
   title: string;
@@ -18,25 +20,55 @@ interface Props {
 }
 
 const HomeCard: FC<Props> = ({
-  photo,
+  photoS,
+  photoM,
+  photoL,
   accent,
   color,
   title,
   info,
   name,
   button,
+  photoPosition,
 }) => {
+  const [picture, setPicture] = useState<StaticImageData>(photoM);
   const { screenWidth } = useStore();
+
+  useEffect(() => {
+    console.log(screenWidth);
+    if (screenWidth >= 1280) {
+      setPicture(photoL);
+    } else if (screenWidth >= 768 && screenWidth < 1280) {
+      setPicture(photoM);
+    } else {
+      setPicture(photoS);
+    }
+  }, [screenWidth]);
+
   return (
-    <section className={classes.container}>
+    <section
+      style={
+        screenWidth >= 768 && photoPosition === 'right'
+          ? { flexDirection: 'row-reverse' }
+          : { flexDirection: 'row' }
+      }
+      className={classes.container}
+    >
       <div className={classes['image-container']}>
-        <Image layout="responsive" objectFit="contain" src={photo} alt={name} />
+        <Image
+          layout="responsive"
+          objectFit="contain"
+          src={picture}
+          alt={name}
+        />
       </div>
-      <div className={classes[`content-container-${color}`]}>
+      <div className={classes[`content-container__${color}`]}>
         {accent && <div className={classes.accent}></div>}
-        <h2 className={classes.title}>{title}</h2>
-        {info && <p className={classes.info}>{info}</p>}
-        {button && <ArrowBtn title="get an invite" color={color} />}
+        <div className={classes['text-container']}>
+          <h2 className={classes.title}>{title}</h2>
+          {info && <p className={classes.info}>{info}</p>}
+          {button && <ArrowBtn title="get an invite" color={color} />}
+        </div>
       </div>
     </section>
   );

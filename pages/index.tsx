@@ -33,11 +33,23 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {HomeCardContent.map(
-        ({ name, title, photo, photoPosition, accent, color, info }) => (
+        ({
+          name,
+          title,
+          photoS,
+          photoM,
+          photoL,
+          photoPosition,
+          accent,
+          color,
+          info,
+        }) => (
           <HomeCard
             name={name}
             title={title}
-            photo={photo}
+            photoS={photoS}
+            photoM={photoM}
+            photoL={photoL}
             accent={accent}
             color={color}
             info={info}

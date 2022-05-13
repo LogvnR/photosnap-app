@@ -1,11 +1,21 @@
 import { StaticImageData } from 'next/image';
-import photo1 from '../../public/assets/home/mobile/create-and-share.jpg';
-import photo2 from '../../public/assets/home/mobile/beautiful-stories.jpg';
-import photo3 from '../../public/assets/home/mobile/designed-for-everyone.jpg';
+import createAndShareMobile from '../../public/assets/home/mobile/create-and-share.jpg';
+import createAndShareTablet from '../../public/assets/home/tablet/create-and-share.jpg';
+import createAndShareDesktop from '../../public/assets/home/desktop/create-and-share.jpg';
+
+import beautifulStoriesMobile from '../../public/assets/home/mobile/beautiful-stories.jpg';
+import beautifulStoriesTablet from '../../public/assets/home/tablet/beautiful-stories.jpg';
+import beautifulStoriesDesktop from '../../public/assets/home/desktop/beautiful-stories.jpg';
+
+import designedForEveryoneMobile from '../../public/assets/home/mobile/designed-for-everyone.jpg';
+import designedForEveryoneTablet from '../../public/assets/home/tablet/designed-for-everyone.jpg';
+import designedForEveryoneDesktop from '../../public/assets/home/desktop/designed-for-everyone.jpg';
 
 interface HomeContent {
   name: string;
-  photo: StaticImageData;
+  photoS: StaticImageData;
+  photoM: StaticImageData;
+  photoL: StaticImageData;
   accent: boolean;
   title: string;
   color: string;
@@ -16,16 +26,20 @@ interface HomeContent {
 export const HomeCardContent: HomeContent[] = [
   {
     name: 'Create and Share',
-    photo: photo1,
+    photoS: createAndShareMobile,
+    photoM: createAndShareTablet,
+    photoL: createAndShareDesktop,
     accent: true,
-    title: 'create and share you photo stories.',
+    title: 'create and share your photo stories.',
     color: 'white',
     info: 'Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others.',
     photoPosition: 'right',
   },
   {
     name: 'Beautiful Stories',
-    photo: photo2,
+    photoS: beautifulStoriesMobile,
+    photoM: beautifulStoriesTablet,
+    photoL: beautifulStoriesDesktop,
     accent: false,
     title: 'beautiful stories every time',
     color: 'black',
@@ -34,7 +48,9 @@ export const HomeCardContent: HomeContent[] = [
   },
   {
     name: 'Designed For Everyone',
-    photo: photo3,
+    photoS: designedForEveryoneMobile,
+    photoM: designedForEveryoneTablet,
+    photoL: designedForEveryoneDesktop,
     accent: false,
     title: 'designed for everyone',
     color: 'black',
