@@ -62,3 +62,10 @@
   font-weight: var(--bold);
   letter-spacing: 2px;
 }
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 384px;
+    max-height: 540px;
+  }
+}

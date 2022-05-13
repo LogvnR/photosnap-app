@@ -59,9 +59,17 @@ const Home: NextPage = () => {
           />
         )
       )}
-      {HomePhotoCardContent.map(({ title, author, photoS }) => (
-        <PhotoCard title={title} author={author} photo={photoS} key={title} />
-      ))}
+      <div className={classes['story-container']}>
+        {HomePhotoCardContent.map(({ title, author, photoS, photoL }) => (
+          <PhotoCard
+            title={title}
+            author={author}
+            photoS={photoS}
+            photoL={photoL}
+            key={title}
+          />
+        ))}
+      </div>
       <Features content={HomeFeatureContent} />
     </section>
   );
