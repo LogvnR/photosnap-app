@@ -27,3 +27,9 @@
   opacity: 0.6;
   text-align: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 460px;
+  }
+}
