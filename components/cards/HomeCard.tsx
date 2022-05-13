@@ -38,12 +38,15 @@ const HomeCard: FC<Props> = ({
   useEffect(() => {
     console.log(screenWidth);
     if (screenWidth >= 1280) {
+      console.log(screenWidth);
       setAltLayout(true);
       setPicture(photoL);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
+      console.log(screenWidth);
       setAltLayout(true);
       setPicture(photoM);
     } else {
+      console.log(screenWidth);
       setAltLayout(false);
     }
   }, [screenWidth]);
@@ -138,8 +141,8 @@ const Desktop: FC<SubProps> = ({
         <Image layout="responsive" objectFit="contain" src={photo} alt={name} />
       </div>
       <div className={classes[`content-container__${color}`]}>
+        {accent && <div className={classes.accent}></div>}
         <div className={classes['text-container']}>
-          {accent && <div className={classes.accent}></div>}
           <h2 className={classes.title}>{title}</h2>
           {info && <p className={classes.info}>{info}</p>}
           {button && <ArrowBtn title="get an invite" color={color} />}

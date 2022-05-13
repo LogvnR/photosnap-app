@@ -36,3 +36,29 @@
   font-weight: var(--bold);
   margin: 3rem 0 2rem;
 }
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-height: 280px;
+  }
+
+  .content-container {
+    flex-direction: row;
+    padding: 0 1.7rem 0 0;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .accent {
+    width: 6px;
+    height: 280px;
+  }
+
+  .title {
+    max-width: 400px;
+    font-size: 40px;
+    letter-spacing: 4.1px;
+    line-height: 48px;
+    margin-right: 4rem;
+  }
+}

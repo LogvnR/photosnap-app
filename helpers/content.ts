@@ -9,7 +9,7 @@ import { StoriesHeroCardContent } from './pages/stories';
 
 // Features Page Content
 import { FeaturesHeroCardContent } from './pages/features';
-import { AdditionalFeatureContent } from './cards/FeatureCardContent';
+import { AllFeatureContent } from './cards/FeatureCardContent';
 
 // Pricing Page Content
 import { PricingHeroCardContent, PricingCardContent } from './pages/pricing';
@@ -26,7 +26,7 @@ export {
   StoriesPhotoCardContent,
   StoriesHeroCardContent,
   FeaturesHeroCardContent,
-  AdditionalFeatureContent,
+  AllFeatureContent,
   PricingHeroCardContent,
   PricingCardContent,
   IncludedCardContent,

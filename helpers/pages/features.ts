@@ -1,15 +1,21 @@
 import { StaticImageData } from 'next/image';
 
-import hero from '../../public/assets/features/mobile/hero.jpg';
+import heroMobile from '../../public/assets/features/mobile/hero.jpg';
+import heroTablet from '../../public/assets/features/tablet/hero.jpg';
+import heroDesktop from '../../public/assets/features/desktop/hero.jpg';
 
 interface FeaturesHero {
-  photo: StaticImageData;
+  photoS: StaticImageData;
+  photoM: StaticImageData;
+  photoL: StaticImageData;
   title: string;
   info: string;
 }
 
 export const FeaturesHeroCardContent: FeaturesHero = {
-  photo: hero,
+  photoS: heroMobile,
+  photoM: heroTablet,
+  photoL: heroDesktop,
   title: 'features',
   info: 'We make sure all of our features are designed to be loved by every aspiring and even professional photographers who wanted to share their stories.',
 };

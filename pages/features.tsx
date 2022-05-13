@@ -1,20 +1,28 @@
+import { useEffect } from 'react';
+
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import useStore from '../helpers/store';
+
 import classes from '../styles/pages/features.module.css';
 
-import {
-  FeaturesHeroCardContent,
-  HomeFeatureContent,
-  AdditionalFeatureContent,
-} from '../helpers/content';
+import { FeaturesHeroCardContent, AllFeatureContent } from '../helpers/content';
 
 import HomeCard from '../components/cards/HomeCard';
 import FeatureCard from '../components/cards/FeatureCard';
 import BetaCard from '../components/cards/BetaCard';
 
 const features: NextPage = () => {
-  const { photo, title, info } = FeaturesHeroCardContent;
+  const { photoS, photoM, photoL, title, info } = FeaturesHeroCardContent;
+  const { setScreenWidth } = useStore();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      setScreenWidth(width);
+    }
+  }, []);
 
   return (
     <section className={classes.container}>
@@ -24,7 +32,9 @@ const features: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeCard
-        photo={photo}
+        photoS={photoS}
+        photoM={photoM}
+        photoL={photoL}
         title={title}
         info={info}
         accent={true}
@@ -33,12 +43,12 @@ const features: NextPage = () => {
         name={title}
         photoPosition="right"
       />
-      {HomeFeatureContent.map(({ title, info, image }) => (
-        <FeatureCard title={title} info={info} image={image} key={title} />
-      ))}
-      {AdditionalFeatureContent.map(({ title, info, image }) => (
-        <FeatureCard title={title} info={info} image={image} key={title} />
-      ))}
+      <div className={classes['feature-container']}>
+        {AllFeatureContent.map(({ title, info, image }) => (
+          <FeatureCard title={title} info={info} image={image} key={title} />
+        ))}
+      </div>
+
       <BetaCard />
     </section>
   );
