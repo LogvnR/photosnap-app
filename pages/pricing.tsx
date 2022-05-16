@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
+
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import useStore from '../helpers/store';
 
 import { PricingHeroCardContent } from '../helpers/content';
 
@@ -10,6 +14,15 @@ import BetaCard from '../components/cards/BetaCard';
 
 const pricing: NextPage = () => {
   const { photoS, photoM, photoL, title, info } = PricingHeroCardContent;
+  const { setScreenWidth } = useStore();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      setScreenWidth(width);
+    }
+  }, []);
+
   return (
     <section>
       <Head>

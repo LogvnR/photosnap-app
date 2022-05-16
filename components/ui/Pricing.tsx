@@ -17,15 +17,8 @@ const Pricing: FC = () => {
     <section className={classes.container}>
       <ToggleCard action={toggleHandler} option={toggle} />
       <section className={classes['pricing-container']}>
-        {PricingCardContent.map(({ accent, title, info, color, price }) => (
-          <PricingCard
-            accent={accent}
-            title={title}
-            info={info}
-            color={color}
-            price={price}
-            type={toggle}
-          />
+        {PricingCardContent.map((content) => (
+          <PricingCard {...content} type={toggle} key={content.title} />
         ))}
       </section>
     </section>
