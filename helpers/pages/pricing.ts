@@ -1,15 +1,21 @@
 import { StaticImageData } from 'next/image';
 
-import hero from '../../public/assets/pricing/mobile/hero.jpg';
+import heroMobile from '../../public/assets/pricing/mobile/hero.jpg';
+import heroTablet from '../../public/assets/pricing/tablet/hero.jpg';
+import heroDesktop from '../../public/assets/pricing/desktop/hero.jpg';
 
 interface PricingHero {
-  photo: StaticImageData;
+  photoS: StaticImageData;
+  photoM: StaticImageData;
+  photoL: StaticImageData;
   title: string;
   info: string;
 }
 
 export const PricingHeroCardContent: PricingHero = {
-  photo: hero,
+  photoS: heroMobile,
+  photoM: heroTablet,
+  photoL: heroDesktop,
   title: 'pricing',
   info: 'Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos.',
 };

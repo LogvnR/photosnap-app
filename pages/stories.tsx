@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+
+import useStore from '../helpers/store';
 
 import classes from '../styles/pages/stories.module.css';
 
@@ -14,6 +16,14 @@ import {
 } from '../helpers/content';
 
 const stories: NextPage = () => {
+  const { setScreenWidth } = useStore();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      setScreenWidth(width);
+    }
+  }, []);
   return (
     <section className={classes.container}>
       <Head>
@@ -22,20 +32,43 @@ const stories: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FeaturedStory />
-      {StoriesPhotoCardContent.map(({ author, title, photoS, date }) => (
-        <PhotoCard author={author} title={title} photo={photoS} date={date} />
-      ))}
+      <div className={classes['card-container']}>
+        {StoriesPhotoCardContent.map((content) => (
+          <PhotoCard {...content} key={content.title} />
+        ))}
+      </div>
     </section>
   );
 };
 
 // Main Hero Section on "Stories" page
 const FeaturedStory: FC = () => {
-  const { headline, title, date, author, info, photoS } =
+  const { headline, title, date, author, info, photoS, photoM, photoL } =
     StoriesHeroCardContent;
+  const [picture, setPicture] = useState<StaticImageData>(photoS);
+
+  const { screenWidth } = useStore();
+
+  useEffect(() => {
+    console.log(screenWidth);
+    if (screenWidth >= 1280) {
+      setPicture(photoL);
+    } else if (screenWidth >= 768 && screenWidth < 1280) {
+      setPicture(photoM);
+    } else {
+      setPicture(photoS);
+    }
+  }, [screenWidth]);
   return (
     <div className={classes['hero-container']}>
-      <Image layout="responsive" objectFit="contain" src={photoS} alt={title} />
+      <div className={classes['photo-container']}>
+        <Image
+          layout="responsive"
+          objectFit="contain"
+          src={picture}
+          alt={title}
+        />
+      </div>
       <div className={classes['content-container']}>
         <p className={classes.headline}>{headline}</p>
         <h2 className={classes.title}>{title}</h2>

@@ -9,7 +9,7 @@ import Included from '../components/ui/Included';
 import BetaCard from '../components/cards/BetaCard';
 
 const pricing: NextPage = () => {
-  const { photo, title, info } = PricingHeroCardContent;
+  const { photoS, photoM, photoL, title, info } = PricingHeroCardContent;
   return (
     <section>
       <Head>
@@ -18,7 +18,9 @@ const pricing: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeCard
-        photo={photo}
+        photoS={photoS}
+        photoM={photoM}
+        photoL={photoL}
         title={title}
         info={info}
         accent={true}

@@ -4,10 +4,20 @@
   flex-direction: column;
 }
 
+.card-container {
+  width: 100%;
+  display: block;
+}
+
 .hero-container {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
 }
 
 .content-container {
@@ -62,4 +72,34 @@
   line-height: 25px;
   font-weight: var(--regular);
   opacity: 0.6;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content-container {
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    margin: 3rem 0;
+  }
+
+  .headline {
+    margin: 0 0 1.7rem;
+  }
+
+  .title {
+    max-width: 50%;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 4.17;
+    margin: 0 0 2rem;
+  }
+
+  .info {
+    max-width: 55%;
+  }
 }

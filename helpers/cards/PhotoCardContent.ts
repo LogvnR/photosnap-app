@@ -120,6 +120,13 @@ export const StoriesPhotoCardContent: StoriesPhotoContent[] = [
     date: 'april 9th 2020',
   },
   {
+    author: 'timothy wagner',
+    title: 'world tour 2019',
+    photoS: worldTourMobile,
+    photoL: worldTourDesktop,
+    date: 'april 7th 2020',
+  },
+  {
     author: 'william malcolm',
     title: 'unforeseen corners',
     photoS: unforeseenCornersMobile,

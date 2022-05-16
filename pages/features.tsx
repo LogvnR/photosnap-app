@@ -44,8 +44,8 @@ const features: NextPage = () => {
         photoPosition="right"
       />
       <div className={classes['feature-container']}>
-        {AllFeatureContent.map(({ title, info, image }) => (
-          <FeatureCard title={title} info={info} image={image} key={title} />
+        {AllFeatureContent.map((content) => (
+          <FeatureCard {...content} key={content.title} />
         ))}
       </div>
 
