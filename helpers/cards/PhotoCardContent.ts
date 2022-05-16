@@ -48,13 +48,6 @@ import somwarpetDesktop from '../../public/assets/stories/desktop/somwarpet.jpg'
 import landOfDreamsMobile from '../../public/assets/stories/mobile/land-of-dreams.jpg';
 import landOfDreamsDesktop from '../../public/assets/stories/desktop/land-of-dreams.jpg';
 
-interface HomePhotoContent {
-  photoS: StaticImageData;
-  photoL: StaticImageData;
-  title: string;
-  author: string;
-}
-
 interface StoriesPhotoContent {
   photoS: StaticImageData;
   photoL: StaticImageData;
@@ -62,33 +55,6 @@ interface StoriesPhotoContent {
   author: string;
   date: string;
 }
-
-export const HomePhotoCardContent: HomePhotoContent[] = [
-  {
-    author: 'john appleseed',
-    title: 'the mountains',
-    photoS: theMountainsMobile,
-    photoL: theMountainsDesktop,
-  },
-  {
-    author: 'benjamin cruz',
-    title: 'sunset cityscapes',
-    photoS: sunsetCityMobile,
-    photoL: sunsetCityDesktop,
-  },
-  {
-    author: 'alexi borodin',
-    title: '18 days voyage',
-    photoS: voyageMobile,
-    photoL: voyageDesktop,
-  },
-  {
-    author: 'samantha brooke',
-    title: 'architecturals',
-    photoS: architecturalsMobile,
-    photoL: architecturalsDesktop,
-  },
-];
 
 export const StoriesPhotoCardContent: StoriesPhotoContent[] = [
   {

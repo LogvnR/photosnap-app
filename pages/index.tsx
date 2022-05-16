@@ -10,8 +10,8 @@ import Features from '../components/ui/Features';
 
 import {
   HomeCardContent,
-  HomePhotoCardContent,
-  HomeFeatureContent,
+  StoriesPhotoCardContent,
+  FeatureContent,
 } from '../helpers/content';
 
 import classes from '../styles/Home.module.css';
@@ -37,11 +37,11 @@ const Home: NextPage = () => {
       ))}
 
       <div className={classes['story-container']}>
-        {HomePhotoCardContent.map((content) => (
-          <PhotoCard {...content} key={content.title} />
+        {StoriesPhotoCardContent.slice(0, 4).map((content) => (
+          <PhotoCard {...content} date="" key={content.title} />
         ))}
       </div>
-      <Features content={HomeFeatureContent} />
+      <Features content={FeatureContent.slice(0, 3)} />
     </section>
   );
 };

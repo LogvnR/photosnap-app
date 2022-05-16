@@ -7,7 +7,7 @@ import useStore from '../helpers/store';
 
 import classes from '../styles/pages/features.module.css';
 
-import { FeaturesHeroCardContent, AllFeatureContent } from '../helpers/content';
+import { FeaturesHeroCardContent, FeatureContent } from '../helpers/content';
 
 import HomeCard from '../components/cards/HomeCard';
 import FeatureCard from '../components/cards/FeatureCard';
@@ -44,7 +44,7 @@ const features: NextPage = () => {
         photoPosition="right"
       />
       <div className={classes['feature-container']}>
-        {AllFeatureContent.map((content) => (
+        {FeatureContent.map((content) => (
           <FeatureCard {...content} key={content.title} />
         ))}
       </div>
