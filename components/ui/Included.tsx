@@ -1,32 +1,51 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+
+import useStore from '../../helpers/store';
 
 import classes from '../../styles/ui/Included.module.css';
 import { IncludedCardContent } from '../../helpers/content';
 
 const Included: FC = () => {
+  const [altLayout, setAltLayout] = useState<boolean>(false);
+  const { screenWidth } = useStore();
+
+  useEffect(() => {
+    console.log(screenWidth);
+    if (screenWidth >= 1280) {
+      setAltLayout(true);
+    } else if (screenWidth >= 768 && screenWidth < 1280) {
+      setAltLayout(true);
+    } else {
+      setAltLayout(false);
+    }
+  }, [screenWidth]);
+
   return (
     <>
-      <FeaturesMobile />
-    </>
-  );
-};
-
-const FeaturesMobile: FC = () => {
-  return (
-    <div className={classes['container__mobile']}>
-      <div className={classes['title-container__mobile']}>
-        <h4>the features</h4>
+      <div className={classes.container}>
+        {altLayout && <h2 className={classes.compare}>compare</h2>}
+        <div className={classes['title-container']}>
+          <h4>the features</h4>
+          {altLayout && (
+            <div className={classes.options}>
+              <h4>basic</h4>
+              <h4>pro</h4>
+              <h4>business</h4>
+            </div>
+          )}
+        </div>
+        {IncludedCardContent.map(({ title, basic, pro, business }) => (
+          <FeatureList
+            title={title}
+            basic={basic}
+            pro={pro}
+            business={business}
+            type={altLayout}
+            key={title}
+          />
+        ))}
       </div>
-      {IncludedCardContent.map(({ title, basic, pro, business }) => (
-        <FeatureListMobile
-          title={title}
-          basic={basic}
-          pro={pro}
-          business={business}
-          key={title}
-        />
-      ))}
-    </div>
+    </>
   );
 };
 
@@ -35,38 +54,67 @@ interface ListFeatures {
   basic: boolean;
   pro: boolean;
   business: boolean;
+  type: boolean;
 }
 
-const FeatureListMobile: FC<ListFeatures> = ({
+const FeatureList: FC<ListFeatures> = ({
   title,
   basic,
   pro,
   business,
+  type,
 }) => {
   return (
-    <div className={classes['list-container__mobile']}>
-      <h4 className={classes['option-title__mobile']}>{title}</h4>
-      <div className={classes['options-container__mobile']}>
-        <div className={classes['list-option__mobile']}>
-          <p>basic</p>
-          {basic && (
-            <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
-          )}
+    <>
+      {!type && (
+        <div className={classes['list-container']}>
+          <h4 className={classes['option-title']}>{title}</h4>
+          <div className={classes['options-container']}>
+            <div className={classes['list-option']}>
+              <p>basic</p>
+              {basic && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+            <div className={classes['list-option']}>
+              <p>pro</p>
+              {pro && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+            <div className={classes['list-option']}>
+              <p>business</p>
+              {business && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+          </div>
         </div>
-        <div className={classes['list-option__mobile']}>
-          <p>pro</p>
-          {pro && (
-            <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
-          )}
+      )}
+      {type && (
+        <div className={classes['list-container']}>
+          <h4 className={classes['option-title']}>{title}</h4>
+          <div className={classes['options-container']}>
+            <div className={classes['list-option']}>
+              {basic && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+            <div className={classes['list-option']}>
+              {pro && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+            <div className={classes['list-option']}>
+              {business && (
+                <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
+              )}
+            </div>
+          </div>
         </div>
-        <div className={classes['list-option__mobile']}>
-          <p>business</p>
-          {business && (
-            <img src="/assets/pricing/desktop/check.svg" alt="Check Mark" />
-          )}
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
+
 export default Included;
