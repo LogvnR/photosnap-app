@@ -94,3 +94,28 @@
     letter-spacing: 2px;
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 0 6rem;
+  }
+
+  .navigation h4 {
+    transition: color 0.25s ease-in-out;
+  }
+
+  .navigation h4:hover {
+    color: var(--grey);
+    transition: color 0.25s ease-in-out;
+  }
+
+  .btn {
+    transition: color 0.25s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: var(--grey);
+    color: var(--black);
+    transition: color 0.25s ease-in-out;
+  }
+}

@@ -12,9 +12,36 @@
   letter-spacing: 2px;
 }
 
+.container-white p,
+.container-black p {
+  margin: 0;
+  transition: border 0.25s ease-in-out;
+}
+
 .container-white {
   color: var(--white);
 }
+
+.container-white p {
+  border-bottom: 1px solid var(--black);
+}
+
 .container-black {
   color: var(--black);
+}
+
+.container-black p {
+  border-bottom: 1px solid var(--white);
+}
+
+@media only screen and (min-width: 1280px) {
+  .container-black:hover > p {
+    border-bottom: 1px solid var(--black);
+    transition: border 0.25s ease-in-out;
+  }
+
+  .container-white:hover > p {
+    border-bottom: 1px solid var(--white);
+    transition: border-bottom 0.25s ease-in-out;
+  }
 }

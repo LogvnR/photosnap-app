@@ -10,7 +10,7 @@ interface Props {
 const ArrowBtn: FC<Props> = ({ color, title }) => {
   return (
     <div className={classes[`container-${color}`]}>
-      {title}
+      <p>{title}</p>
       <img src={`/assets/shared/desktop/arrow-${color}.svg`} />
     </div>
   );
