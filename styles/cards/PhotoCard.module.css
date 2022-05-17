@@ -69,3 +69,23 @@
     max-height: 540px;
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 25%;
+    max-height: unset;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .container:hover {
+    transform: translateY(-15px);
+    transition: all 0.15s ease-in-out;
+  }
+
+  .container:hover > .content-container {
+    border-bottom: 6px solid;
+    border-image-slice: 0 0 1;
+    border-image-source: var(--accent);
+    transition: border-bottom 0.15s ease-in-out;
+  }
+}

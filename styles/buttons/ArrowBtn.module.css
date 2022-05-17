@@ -23,7 +23,7 @@
 }
 
 .container-white p {
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid transparent;
 }
 
 .container-black {
@@ -31,7 +31,7 @@
 }
 
 .container-black p {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid transparent;
 }
 
 @media only screen and (min-width: 1280px) {
