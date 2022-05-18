@@ -40,7 +40,7 @@ const BetaCard: FC = () => {
         />
       </div>
       <div className={classes['content-container']}>
-        <div className={classes.accent}></div>
+        <div className={classes.accent}>f</div>
         <h2 className={classes.title}>{title}</h2>
         <ArrowBtn title="get an invite" color="white" />
       </div>
