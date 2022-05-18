@@ -114,12 +114,8 @@
   }
 
   .accent {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 6px;
     height: 100%;
-    background: var(--accent);
   }
 
   .content-container {
@@ -140,5 +136,52 @@
   .btn-black,
   .btn-white {
     padding: 0.75rem 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container-black,
+  .container-white {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .container-white {
+    width: 350px;
+    height: 407px;
+    padding: 0 3rem;
+  }
+
+  .container-black {
+    width: 350px;
+    height: 470px;
+    padding: 0 3rem;
+  }
+
+  .accent {
+    width: 100%;
+    height: 6px;
+  }
+
+  .title {
+    margin: 0rem;
+  }
+
+  .price-container {
+    margin-bottom: 0;
+  }
+
+  .info {
+    text-align: center;
+    margin: 0;
+  }
+
+  .price-container {
+    max-width: unset;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

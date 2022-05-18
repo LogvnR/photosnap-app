@@ -26,6 +26,7 @@
   width: 128px;
   height: 6px;
   background: var(--accent);
+  color: transparent;
 }
 
 .title {
