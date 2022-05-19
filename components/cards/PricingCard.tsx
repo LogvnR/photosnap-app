@@ -25,7 +25,6 @@ const PricingCard: FC<PricingCardProps> = ({
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 1280) {
       setAltLayout(false);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
@@ -34,6 +33,7 @@ const PricingCard: FC<PricingCardProps> = ({
       setAltLayout(false);
     }
   }, [screenWidth]);
+
   return (
     <>
       {!altLayout && (

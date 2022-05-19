@@ -12,19 +12,14 @@ import ArrowBtn from '../buttons/ArrowBtn';
 const BetaCard: FC = () => {
   const { title, photoS, photoM, photoL } = BetaCardContent;
   const [picture, setPicture] = useState<StaticImageData>(photoS);
-  const [altLayout, setAltLayout] = useState<boolean>(false);
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 1280) {
-      setAltLayout(true);
       setPicture(photoL);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
-      setAltLayout(true);
       setPicture(photoM);
     } else {
-      setAltLayout(false);
       setPicture(photoS);
     }
   }, [screenWidth]);

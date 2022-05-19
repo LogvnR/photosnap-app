@@ -10,7 +10,6 @@ const Included: FC = () => {
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 1280) {
       setAltLayout(true);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
@@ -34,15 +33,8 @@ const Included: FC = () => {
             </div>
           )}
         </div>
-        {IncludedCardContent.map(({ title, basic, pro, business }) => (
-          <FeatureList
-            title={title}
-            basic={basic}
-            pro={pro}
-            business={business}
-            type={altLayout}
-            key={title}
-          />
+        {IncludedCardContent.map((content) => (
+          <FeatureList {...content} type={altLayout} key={content.title} />
         ))}
       </div>
     </>

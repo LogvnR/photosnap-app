@@ -5,7 +5,6 @@ import useStore from '../../helpers/store';
 
 import classes from '../../styles/cards/PhotoCard.module.css';
 
-// Add Desktop photo variant and check logic
 interface Props {
   photoS: StaticImageData;
   photoL: StaticImageData;
@@ -19,13 +18,13 @@ const PhotoCard: FC<Props> = ({ photoS, photoL, title, author, date }) => {
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 768) {
       setPicture(photoL);
     } else {
       setPicture(photoS);
     }
   }, [screenWidth]);
+
   return (
     <div className={classes.container}>
       <div className={classes['content-container']}>

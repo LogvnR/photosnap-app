@@ -12,8 +12,8 @@ interface Props {
 const Features: FC<Props> = ({ content }) => {
   return (
     <div className={classes.container}>
-      {content.map(({ title, info, image }) => (
-        <FeatureCard image={image} title={title} info={info} key={title} />
+      {content.map((content) => (
+        <FeatureCard {...content} key={content.title} />
       ))}
     </div>
   );

@@ -14,7 +14,7 @@ import FeatureCard from '../components/cards/FeatureCard';
 import BetaCard from '../components/cards/BetaCard';
 
 const features: NextPage = () => {
-  const { photoS, photoM, photoL, title, info } = FeaturesHeroCardContent;
+  const { ...content } = FeaturesHeroCardContent;
   const { setScreenWidth } = useStore();
 
   useEffect(() => {
@@ -32,15 +32,11 @@ const features: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeCard
-        photoS={photoS}
-        photoM={photoM}
-        photoL={photoL}
-        title={title}
-        info={info}
+        {...content}
         accent={true}
         button={false}
         color="white"
-        name={title}
+        name={content.title}
         photoPosition="right"
       />
       <div className={classes['feature-container']}>

@@ -36,17 +36,13 @@ const HomeCard: FC<Props> = ({
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 1280) {
-      console.log(screenWidth);
       setAltLayout(true);
       setPicture(photoL);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
-      console.log(screenWidth);
       setAltLayout(true);
       setPicture(photoM);
     } else {
-      console.log(screenWidth);
       setAltLayout(false);
     }
   }, [screenWidth]);

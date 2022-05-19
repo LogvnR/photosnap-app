@@ -50,7 +50,6 @@ const FeaturedStory: FC = () => {
   const { screenWidth } = useStore();
 
   useEffect(() => {
-    console.log(screenWidth);
     if (screenWidth >= 1280) {
       setPicture(photoL);
     } else if (screenWidth >= 768 && screenWidth < 1280) {
@@ -59,6 +58,7 @@ const FeaturedStory: FC = () => {
       setPicture(photoS);
     }
   }, [screenWidth]);
+
   return (
     <div className={classes['hero-container']}>
       <div className={classes['photo-container']}>
