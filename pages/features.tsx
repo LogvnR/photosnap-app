@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import useStore from '../helpers/store';
 
-import classes from '../styles/pages/Features.module.css';
+import classes from '../styles/pages/FeaturesPage.module.css';
 
 import { FeaturesHeroCardContent, FeatureContent } from '../helpers/content';
 

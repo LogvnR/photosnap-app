@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import useStore from '../helpers/store';
 
-import classes from '../styles/pages/Stories.module.css';
+import classes from '../styles/pages/StoriesPage.module.css';
 
 import PhotoCard from '../components/cards/PhotoCard';
 import ArrowBtn from '../components/buttons/ArrowBtn';
