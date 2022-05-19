@@ -8,11 +8,11 @@ import useStore from '../helpers/store';
 import { PricingHeroCardContent } from '../helpers/content';
 
 import HomeCard from '../components/cards/HomeCard';
-import Pricing from '../components/ui/Pricing';
+import Prices from '../components/ui/Prices';
 import Included from '../components/ui/Included';
 import BetaCard from '../components/cards/BetaCard';
 
-const pricing: NextPage = () => {
+const Pricing: NextPage = () => {
   const { ...content } = PricingHeroCardContent;
   const { setScreenWidth } = useStore();
 
@@ -21,7 +21,7 @@ const pricing: NextPage = () => {
       const width = window.innerWidth;
       setScreenWidth(width);
     }
-  }, []);
+  }, [setScreenWidth]);
 
   return (
     <section>
@@ -38,11 +38,11 @@ const pricing: NextPage = () => {
         name={content.title}
         photoPosition="right"
       />
-      <Pricing />
+      <Prices />
       <Included />
       <BetaCard />
     </section>
   );
 };
 
-export default pricing;
+export default Pricing;

@@ -2,11 +2,11 @@ import { useState, FC } from 'react';
 
 import { PricingCardContent } from '../../helpers/content';
 
-import classes from '../../styles/ui/Pricing.module.css';
+import classes from '../../styles/ui/Prices.module.css';
 import ToggleCard from '../buttons/ToggleCard';
 import PricingCard from '../cards/PricingCard';
 
-const Pricing: FC = () => {
+const Prices: FC = () => {
   const [toggle, setToggle] = useState(false);
 
   const toggleHandler = () => {
@@ -25,4 +25,4 @@ const Pricing: FC = () => {
   );
 };
 
-export default Pricing;
+export default Prices;

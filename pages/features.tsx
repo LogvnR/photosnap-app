@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import useStore from '../helpers/store';
 
-import classes from '../styles/pages/features.module.css';
+import classes from '../styles/pages/Features.module.css';
 
 import { FeaturesHeroCardContent, FeatureContent } from '../helpers/content';
 
@@ -13,7 +13,7 @@ import HomeCard from '../components/cards/HomeCard';
 import FeatureCard from '../components/cards/FeatureCard';
 import BetaCard from '../components/cards/BetaCard';
 
-const features: NextPage = () => {
+const Features: NextPage = () => {
   const { ...content } = FeaturesHeroCardContent;
   const { setScreenWidth } = useStore();
 
@@ -22,7 +22,7 @@ const features: NextPage = () => {
       const width = window.innerWidth;
       setScreenWidth(width);
     }
-  }, []);
+  }, [setScreenWidth]);
 
   return (
     <section className={classes.container}>
@@ -50,4 +50,4 @@ const features: NextPage = () => {
   );
 };
 
-export default features;
+export default Features;

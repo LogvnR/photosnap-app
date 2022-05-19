@@ -24,7 +24,8 @@ const Home: NextPage = () => {
       const width = window.innerWidth;
       setScreenWidth(width);
     }
-  }, []);
+  }, [setScreenWidth]);
+
   return (
     <section className={classes.container}>
       <Head>

@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import useStore from '../helpers/store';
 
-import classes from '../styles/pages/stories.module.css';
+import classes from '../styles/pages/Stories.module.css';
 
 import PhotoCard from '../components/cards/PhotoCard';
 import ArrowBtn from '../components/buttons/ArrowBtn';
@@ -15,7 +15,7 @@ import {
   StoriesHeroCardContent,
 } from '../helpers/content';
 
-const stories: NextPage = () => {
+const Stories: NextPage = () => {
   const { setScreenWidth } = useStore();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const stories: NextPage = () => {
       const width = window.innerWidth;
       setScreenWidth(width);
     }
-  }, []);
+  }, [setScreenWidth]);
   return (
     <section className={classes.container}>
       <Head>
@@ -83,4 +83,4 @@ const FeaturedStory: FC = () => {
   );
 };
 
-export default stories;
+export default Stories;
