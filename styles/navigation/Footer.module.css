@@ -50,6 +50,7 @@
   margin: 2rem 0 0;
   opacity: 0.5;
   text-transform: capitalize;
+  cursor: default;
 }
 
 @media only screen and (min-width: 768px) {
@@ -129,12 +130,12 @@
   }
 
   .navigation h4 {
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
   }
 
   .navigation h4:hover {
     opacity: 0.3;
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
     cursor: pointer;
   }
 

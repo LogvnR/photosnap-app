@@ -80,6 +80,8 @@
   .container:hover {
     transform: translateY(-15px);
     transition: all 0.15s ease-in-out;
+    z-index: 2;
+    cursor: pointer;
   }
 
   .container:hover > .content-container {

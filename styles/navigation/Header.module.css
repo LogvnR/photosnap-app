@@ -100,6 +100,10 @@
     padding: 0 6rem;
   }
 
+  .title:hover {
+    cursor: pointer;
+  }
+
   .navigation h4 {
     transition: color 0.25s ease-in-out;
   }
@@ -107,15 +111,17 @@
   .navigation h4:hover {
     color: var(--grey);
     transition: color 0.25s ease-in-out;
+    cursor: pointer;
   }
 
   .btn {
-    transition: color 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
 
   .btn:hover {
     background-color: var(--grey);
     color: var(--black);
-    transition: color 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
   }
 }

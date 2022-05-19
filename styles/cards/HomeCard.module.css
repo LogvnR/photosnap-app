@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   box-sizing: border-box;
+  cursor: default;
 }
 
 .image-container {

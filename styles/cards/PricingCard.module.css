@@ -146,6 +146,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    cursor: default;
   }
 
   .container-white {
@@ -183,5 +184,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .btn-black,
+  .btn-white {
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+  }
+
+  .btn-black:hover,
+  .btn-white:hover {
+    background-color: var(--grey);
+    color: var(--black);
+    transition: all 0.25s ease-in-out;
   }
 }
