@@ -38,10 +38,12 @@
   .container-black:hover > p {
     border-bottom: 1px solid var(--black);
     transition: border 0.25s ease-in-out;
+    cursor: pointer;
   }
 
   .container-white:hover > p {
     border-bottom: 1px solid var(--white);
     transition: border-bottom 0.25s ease-in-out;
+    cursor: pointer;
   }
 }

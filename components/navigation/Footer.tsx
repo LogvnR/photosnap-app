@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import classes from '../../styles/navigation/Footer.module.css';
 import ArrowBtn from '../buttons/ArrowBtn';
 
@@ -15,10 +17,18 @@ const Footer = () => {
         <img src="/assets/shared/desktop/instagram.svg" alt="Instagram" />
       </div>
       <div className={classes.navigation}>
-        <h4>home</h4>
-        <h4>stories</h4>
-        <h4>features</h4>
-        <h4>pricing</h4>
+        <Link href="/">
+          <h4>home</h4>
+        </Link>
+        <Link href="/stories">
+          <h4>stories</h4>
+        </Link>
+        <Link href="/features">
+          <h4>features</h4>
+        </Link>
+        <Link href="/pricing">
+          <h4>pricing</h4>
+        </Link>
       </div>
       <div className={classes.btn}>
         <ArrowBtn title="get an invite" color="white" />
